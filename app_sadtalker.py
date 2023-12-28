@@ -128,4 +128,4 @@ if __name__ == "__main__":
 
     demo = sadtalker_demo()
     demo.queue()
-    demo.launch(server_port=10201, share=True)
+    demo.launch(server_port=6006, share=False)
