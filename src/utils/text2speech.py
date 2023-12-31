@@ -8,7 +8,7 @@ class TTSTalker():
         model_name = "tts_models/multilingual/multi-dataset/xtts_v2"
         self.tts = TTS(model_name=model_name, progress_bar=True, gpu=True)
 
-    def test(self, text, audio, language='en'):
+    def test(self, text, audio, language='zh'):
 
         tempf  = tempfile.NamedTemporaryFile(
                 delete = False,
