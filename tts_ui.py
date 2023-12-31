@@ -9,7 +9,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=True)
 # available_models = TTS.list_models(None)
 available_speakers = TTS.speakers
-available_languages = TTS.languages
+#available_languages = TTS.languages
 
 
 def gradio_error_wrap(fun):
@@ -68,7 +68,24 @@ def make_tts_ui(output_audio_gr):
     language_gr = gr.Dropdown(
         label="Language",
         info="Select an output language for the synthesised speech",
-        choices=available_languages,
+        choices=[
+            "en",
+            "es",
+            "fr",
+            "de",
+            "it",
+            "pt",
+            "pl",
+            "tr",
+            "ru",
+            "nl",
+            "cs",
+            "ar",
+            "zh",
+            "hu",
+            "ko",
+            "ja",
+        ],
         max_choices=1,
         value="en",
     )
