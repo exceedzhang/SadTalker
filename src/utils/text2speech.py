@@ -5,7 +5,6 @@ from TTS.api import TTS
 
 class TTSTalker():
     def __init__(self) -> None:
-        #model_name = TTS().list_models()[0]
         model_name = "tts_models/multilingual/multi-dataset/xtts_v2"
         self.tts = TTS(model_name=model_name)
 
