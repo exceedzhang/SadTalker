@@ -5,15 +5,16 @@ from TTS.api import TTS
 
 class TTSTalker():
     def __init__(self) -> None:
-        self.tts = TTS(TTS.list_models()[0])
+        model_name = TTS.list_models()[0]
+        self.tts = TTS(model_name)
 
-    def test(self, text, audio, language='en'):
+    def test(self, text, language='en'):
 
         tempf  = tempfile.NamedTemporaryFile(
                 delete = False,
                 suffix = ('.'+'wav'),
             )
 
-        self.tts.tts_to_file(text, speaker_wav=audio, language=language, file_path=tempf.name)
+        self.tts.tts_to_file(text, speaker=self.tts.speakers[0], language=language, file_path=tempf.name)
 
         return tempf.name
